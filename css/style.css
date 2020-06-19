@@ -1,0 +1,213 @@
+/* VARIABLES */
+
+:root{
+    --text-color: #222; /* white theme */
+    --background-color: #fefefe; /* white theme */
+    --background-color-2: #dedede; /* white theme */
+    --background-color-3: #cdcdcd; /* white theme */
+    --button-text-color: #4d9aff;
+    --transition-speed: 0.25s;
+}
+
+
+/* MAIN */
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  transition: var(--transition-speed);
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition-speed);
+}
+
+
+/* HEADER */
+
+.container header{
+  padding: 15px 0 15px 0;
+  text-align: center;
+  position: -webkit-sticky; /* safari */
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  width: 100%;
+  z-index: 1;
+}
+
+.container header h1{
+  display: inline;
+  font-weight: bolder;
+  font-size: clamp(12pt,4vw,24pt);
+}
+
+
+/* CONTAINER */
+
+.container{
+  position: absolute;
+  width: 95%;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* BANNER */
+
+.container .banner{
+  height: 240px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-image: url("../img/panorama.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: var(--background-color-2);
+  text-align: center;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 481px){
+  .container .banner{
+    height: 170px;
+  }
+}
+
+
+/* ICON ROW */
+
+.container .icon-row{
+  margin: 10px;
+  text-align: left;
+}
+
+.container .icon-row h2{
+  margin: 0;
+  font-weight: 550;
+  display: inline;
+  font-size: clamp(14pt,8vw,18pt);
+}
+
+/*.container .icon-row a{
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--background-color-2);
+  padding-left: 15px; padding-right: 15px;
+  padding-top: 1px; padding-bottom: 1px;
+  border-radius: 100px;
+  float: right;
+  margin: 2px;
+}
+
+.container .icon-row a:hover{
+  background-color: var(--background-color-3);
+  transform: scale(1.05);
+}*/
+
+.container .icon-row .scroll-row{
+  padding: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.container .icon-row .scroll-row .scroll-row-item{
+  text-align: center;
+  display: inline-block;
+  width: 180px; height: 180px;
+  transition: var(--transition-speed);
+}
+
+@media screen and (max-width: 481px){
+  .container .icon-row .scroll-row .scroll-row-item{
+    width: 140px; height: 140px;
+  }
+}
+
+.container .icon-row .scroll-row .scroll-row-item:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.container .icon-row .scroll-row .scroll-row-item .item-map{
+  width: 360px;
+  height: 180px;
+}
+
+.container .icon-row .scroll-row .scroll-row-item .item-map img{
+  width: 300px; height: 150px;
+  border-radius: 10px;
+}
+
+.container .icon-row .scroll-row .scroll-row-item img{
+  width: 150px; height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 481px){
+  .container .icon-row .scroll-row .scroll-row-item img{
+    width: 120px; height: 120px;
+  }
+}
+
+.container .icon-row .scroll-row .scroll-row-item h3{
+  margin: 0;
+  font-size: 14pt;
+  font-weight: 500;
+  font-size: clamp(12pt,4vw,16pt);
+}
+
+/*.container .icon-row .scroll-row .scroll-row-item a{
+  margin: 0;
+  padding-left: 15px; padding-right: 15px;
+  padding-top: 1px; padding-bottom: 1px;
+  border-radius: 100px;
+  font-weight: bold;
+  background-color: var(--background-color-2);
+  color: var(--button-text-color);
+  font-size: 14pt;
+}
+
+.container .icon-row .scroll-row .scroll-row-item a:hover{
+  background-color: var(--background-color-3);
+}*/
+
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar{
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color:  var(--background-color-2);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color:  var(--background-color-3);
+}
+
+
+/* EXTRA CLASSES */
+
+.unselectable{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
